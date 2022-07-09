@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "1b6ce031-4f8b-45ba-b699-a710914d7365",
+		"name": "REST APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Symfony APIs",
+			"item": [
+				{
+					"name": "Login API",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"admin123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/api/login_check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"login_check"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"admin123\",\r\n    \"roles\": [\"ROLE_USER\"]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/api/register_user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"register_user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Upload Image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NTczMjE2NDYsImV4cCI6MTY1NzMyNTI0Niwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSJ9.PoA1dK5cF0UbRPZnMAPqCQek5akLygTg1zHtrs41EiNInp98rowPfH8ndAttuzuOP75fPHVyL7zztga7nop0_VQ6hZLsCMaoH1_MM7J5dMyDxp5JhTsuULraZP25TzMV1Dat4i9vGpHS8AihngYI9gWSJyn-DtRE5-72Rd3jezDxBoqEJ0nFv9hBse9VWcpwFfqW6AEJybXHiWFWKCmeV66OcAHkLQL9UA9rAgNYoDgXMjc16WZmP4_mgROMigRjs7bvIPWgXN_u9elC5AerFdyppbggrZirpCG4l7PRCAq7Nq6LXJD1vFA--dNG9-lilACdTyQrnr-G26kb5TKsFQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/umajeed/Desktop/download.png",
+									"disabled": true
+								},
+								{
+									"key": "tag",
+									"value": "tag1, tag2, tag3, asa",
+									"type": "default"
+								},
+								{
+									"key": "provider",
+									"value": "google",
+									"type": "default"
+								},
+								{
+									"key": "source",
+									"value": "https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-6-1.png",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/api/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Front-End Get Images API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/search_images?tag=tag&provider=google",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"search_images"
+							],
+							"query": [
+								{
+									"key": "tag",
+									"value": "tag"
+								},
+								{
+									"key": "provider",
+									"value": "google"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Add Image To Library",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NTczMjE2NDYsImV4cCI6MTY1NzMyNTI0Niwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSJ9.PoA1dK5cF0UbRPZnMAPqCQek5akLygTg1zHtrs41EiNInp98rowPfH8ndAttuzuOP75fPHVyL7zztga7nop0_VQ6hZLsCMaoH1_MM7J5dMyDxp5JhTsuULraZP25TzMV1Dat4i9vGpHS8AihngYI9gWSJyn-DtRE5-72Rd3jezDxBoqEJ0nFv9hBse9VWcpwFfqW6AEJybXHiWFWKCmeV66OcAHkLQL9UA9rAgNYoDgXMjc16WZmP4_mgROMigRjs7bvIPWgXN_u9elC5AerFdyppbggrZirpCG4l7PRCAq7Nq6LXJD1vFA--dNG9-lilACdTyQrnr-G26kb5TKsFQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image_id\": 4\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/api/add_image_library",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"add_image_library"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current Login User Images Added",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NTczMjE2NDYsImV4cCI6MTY1NzMyNTI0Niwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSJ9.PoA1dK5cF0UbRPZnMAPqCQek5akLygTg1zHtrs41EiNInp98rowPfH8ndAttuzuOP75fPHVyL7zztga7nop0_VQ6hZLsCMaoH1_MM7J5dMyDxp5JhTsuULraZP25TzMV1Dat4i9vGpHS8AihngYI9gWSJyn-DtRE5-72Rd3jezDxBoqEJ0nFv9hBse9VWcpwFfqW6AEJybXHiWFWKCmeV66OcAHkLQL9UA9rAgNYoDgXMjc16WZmP4_mgROMigRjs7bvIPWgXN_u9elC5AerFdyppbggrZirpCG4l7PRCAq7Nq6LXJD1vFA--dNG9-lilACdTyQrnr-G26kb5TKsFQ",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/get_images",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"get_images"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

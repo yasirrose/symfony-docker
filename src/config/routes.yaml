@@ -1,3 +1,40 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+
+api_login_check:
+    path: /api/login_check
+
+api_search_images:
+    path: /api/search_images
+    controller: App\Controller\ApiController::searchImages
+    methods:    GET|HEAD
+
+api_upload_images:
+    path: /api/upload
+    controller: App\Controller\ApiController::uploadImage
+    methods:    POST
+
+api_user_images:
+    path: /api/set-user-images
+    controller: App\Controller\ApiController::setUserImages
+    methods:    POST
+
+api_register_user:
+    path: /api/register_user
+    controller: App\Controller\RegistrationController::createUser
+    methods:    POST
+
+api_add_image_library:
+    path: /api/add_image_library
+    controller: App\Controller\ApiController::addImage
+    methods:    POST
+
+api_get_images:
+    path: /api/get_images
+    controller: App\Controller\ApiController::getImages
+    methods:    GET
+
+    
+
+
