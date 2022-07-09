@@ -51,7 +51,7 @@ Now open the browser and you will see the symphony default page.
 
 **Language:** Php
 
-**Framework:** Symphony
+**Framework:** Symfony
 
 **Database:** MySQL
 
