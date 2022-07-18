@@ -33,17 +33,22 @@ Install Dependcies
   cd src
   docker-compose run --rm composer update
 ```
+
+Run the Project
+```bash
+  docker-compose up -d site
+```
+
 Apply Database Migrations
 
 ```bash
   docker-compose run php bin/console doctrine:migrations:migrate
 ```
 
-Run the Project
-```bash
-  docker-compose up -d site
-```
 Now open the browser and you will see the symphony default page.
+
+Postman Collection File: Symfony REST APIs.postman_collection
+Reference Images Folder: screenshots
 
 
 
